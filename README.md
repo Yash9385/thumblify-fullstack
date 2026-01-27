@@ -1,37 +1,65 @@
-<h1 align="center">🚀 Thumblify</h1>
-<h3 align="center">🎨 AI Powered Thumbnail Generator</h3>
-
 <p align="center">
-  <img src="https://img.shields.io/badge/FullStack-Project-blueviolet?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/React-TypeScript-61DAFB?style=for-the-badge&logo=react" />
-  <img src="https://img.shields.io/badge/Node-Express-339933?style=for-the-badge&logo=node.js" />
-  <img src="https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb" />
-  <img src="https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=FF6B00&center=true&vCenter=true&width=800&lines=Thumblify+%F0%9F%8E%A8;AI+Thumbnail+Generator;Full+Stack+MERN+Application;Fast+%7C+Cloud+Powered+%7C+Secure" />
 </p>
 
 <p align="center">
-  ✨ Create stunning thumbnails using AI • Secure • Fast • Cloud Powered
+  <img src="https://img.shields.io/badge/Status-Live-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/AI-Thumbnail%20Generator-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react" />
+  <img src="https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=node.js" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge&logo=mongodb" />
+  <img src="https://img.shields.io/badge/Cloud-Cloudinary-purple?style=for-the-badge" />
 </p>
 
 ---
 
-## 🌟 Features
+## 🚀 Live Demo
+👉 **https://thumblify-fullstack.vercel.app**
 
-🔐 Secure Authentication  
-🧠 AI Thumbnail Generation  
-☁️ Cloudinary Image Storage  
-⚡ High-performance REST APIs  
+---
+
+## 🎥 App Preview
+
+<p align="center">
+  <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="600"/>
+</p>
+
+---
+
+## ✨ Features
+
+🎨 AI Thumbnail Generation  
+🔐 Secure User Authentication  
+☁️ Cloud Image Upload & Storage  
+⚡ Fast REST API Backend  
 📱 Responsive UI  
-🌍 Full Deployment (Frontend + Backend)
+🌍 Fully Deployed on Vercel  
 
 ---
 
 ## 🛠 Tech Stack
 
-| Frontend | Backend | Database | Deployment |
-|---------|---------|----------|------------|
-| ⚛ React + TypeScript | 🟢 Node.js + Express | 🍃 MongoDB Atlas | ▲ Vercel |
-| 🎨 Tailwind CSS | REST APIs | | |
+| Frontend | Backend | Database | Cloud |
+|---------|---------|----------|-------|
+| ⚛ React.js | 🟢 Node.js | 🍃 MongoDB Atlas | ☁️ Cloudinary |
+| 🎨 Tailwind CSS | 🚀 Express.js | | |
+| 📘 TypeScript | REST APIs | | |
+
+---
+
+## 📡 API Documentation
+
+### 🔑 Auth Routes
+| Method | Endpoint | Description |
+|--------|---------|-------------|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | Login user |
+
+### 🖼 Thumbnail Routes
+| Method | Endpoint | Description |
+|--------|---------|-------------|
+| POST | `/api/thumbnail/generate` | Generate thumbnail |
+| GET | `/api/thumbnail/:id` | Fetch user thumbnails |
 
 ---
 
