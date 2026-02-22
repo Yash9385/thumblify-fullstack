@@ -2,12 +2,14 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import session from "express-session";
 import MongoStore from "connect-mongo";
+import dotenv from "dotenv";
 
 import connectDB from "./configs/db.js";
 import AuthRouter from "./routes/AuthRoutes.js";
 import ThumbnailRouter from "./routes/ThumbnailRoutes.js";
 import UserRouter from "./routes/UserRoutes.js";
-import dotenv from "dotenv";
+import ContactRouter from "./routes/ContactRoutes.js";
+
 dotenv.config();
 
 // session typing
@@ -34,7 +36,10 @@ app.use(
 app.use(express.json());
 app.set("trust proxy", 1);
 
-// 🔥 Session with connect-mongo (FIXED)
+// ✅ CORRECT CONTACT ROUTE
+app.use("/api", ContactRouter);
+
+// 🔥 Session
 app.use(
   session({
     name: "thumblify.sid",
@@ -42,7 +47,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: process.env.MONGODB_URI as string, // ✅ FIXED HERE
+      mongoUrl: process.env.MONGODB_URI as string,
       collectionName: "sessions",
     }),
     cookie: {
