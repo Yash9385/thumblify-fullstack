@@ -1,6 +1,5 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import "dotenv/config";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 
@@ -8,6 +7,8 @@ import connectDB from "./configs/db.js";
 import AuthRouter from "./routes/AuthRoutes.js";
 import ThumbnailRouter from "./routes/ThumbnailRoutes.js";
 import UserRouter from "./routes/UserRoutes.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 // session typing
 declare module "express-session" {
@@ -41,7 +42,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URI as string, // ✅ CORRECT NAME
+      mongoUrl: process.env.MONGODB_URI as string, // ✅ FIXED HERE
       collectionName: "sessions",
     }),
     cookie: {

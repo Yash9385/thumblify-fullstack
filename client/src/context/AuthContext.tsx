@@ -15,12 +15,12 @@ interface AuthContextProps {
 
 const AuthContext = createContext<AuthContextProps>({
     isLoggedIn: false,
-    setIsLoggedIn: () => {},
+    setIsLoggedIn: () => { },
     user: null,
-    setUser: () => {},
-    login: async () => {},
-    signUp: async () => {},
-    logout: async () => {},
+    setUser: () => { },
+    login: async () => { },
+    signUp: async () => { },
+    logout: async () => { },
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
@@ -41,17 +41,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     const login = async ({ email, password }: { email: string; password: string }) => {
-        try {
-            const { data } = await api.post('/api/auth/login', { email, password });
-            if (data.user) {
-                setUser(data.user as IUser);
-                setIsLoggedIn(true);
-            }
-            toast.success(data.message);
-        } catch (error) {
-            console.log(error);
+    try {
+        const { data } = await api.post('/api/auth/login', { email, password });
+
+        if (data.user) {
+            setUser(data.user as IUser);
+            setIsLoggedIn(true);
         }
-    };
+
+        toast.success(data.message);
+    } catch (error: any) {
+        toast.error(error.response?.data?.message || "Login failed");
+    }
+};
+
 
     const logout = async () => {
         try {
